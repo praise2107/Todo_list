@@ -1,0 +1,9 @@
+create_table("tasks") {
+	t.Column("id", "uuid", {primary: true})
+	t.Timestamps()
+	t.Column("title", "string", {})
+	t.Column("details", "text", {null: true})
+	t.Column("user_id", "uuid")
+	t.Column("completed", "bool", {"	default": false})
+	t.ForeignKey("user_id", {"users": ["id"]}, {"on_delete": "cascade"})
+}

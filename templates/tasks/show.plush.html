@@ -1,0 +1,38 @@
+<div class="py-4 mb-2">
+  <h3 class="d-inline-block">Task Details</h3>
+
+  <div class="float-right">
+    <%= linkTo(tasksPath(), {class: "btn btn-info"}) { %>
+      Back to all Tasks
+    <% } %>
+    <%= linkTo(editTaskPath({ task_id: task.ID }), {class: "btn btn-warning", body: "Edit"}) %>
+    <%= linkTo(taskPath({ task_id: task.ID }), {class: "btn btn-danger", "data-method": "DELETE", "data-confirm": "Are you sure?", body: "Destroy"}) %>
+  </div>
+</div>
+
+
+
+<ul class="list-group mb-2 ">
+
+
+  <li class="list-group-item pb-1">
+    <label class="small d-block">Title</label>
+    <p class="d-inline-block"><%= task.Title %></p>
+  </li>
+
+
+
+  <li class="list-group-item pb-1">
+    <label class="small d-block">Body</label>
+    <p class="d-inline-block"><%= task.Body %></p>
+  </li>
+
+
+
+  <li class="list-group-item pb-1">
+    <label class="small d-block">Completed</label>
+    <p class="d-inline-block"><%= task.Completed %></p>
+  </li>
+
+
+</ul>
